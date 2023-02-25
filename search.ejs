@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Results</title>
+    <%- include("../partials/head") %>
+    
+     <style>
+      body{
+        
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtLjCgRZ3cs6XpGza5j91fvzWC1Hy9LQenbA&usqp=CAU");
+        
+      }
+      </style>
+  </head>
+  <body>
+        <%- include("../partials/navbar") %>
+       <div class="container">
+      <h1 style="margin-left: 35%;">Search Result</h1> 
+<hr style="color: rgb(13, 0, 255)"></hr>
+<hr style="color: rgb(13, 0, 255)"></hr>
+</div>
+
+<div class="container" style="background-color: aqua">
+<div class="row">
+    <% for(let r of blgs){ %>
+       <div class="col-md-6 col-lg-6 col-sm-12">
+
+        <h3 class="text-center pt-5"><%= r.title %>
+        </h3>
+
+        <div class="d-flex justify-content-center">
+        <img class="rounded" style="width: 70%" src="<%= r.img %> " alt="blog pic" />
+        </div>
+
+        <p class="text-center pt-1 mb-8">
+          <%= r.text %>
+        </p>
+
+        <p class="text-center pt-1"><small></small><i><%= r.auther %></i></small>
+        </p>
+
+        <p class="text-center pt-1"><small></small><i><%= r.date %></i></small>
+        </p>
+
+      </p> <a href="/blogs/<%= r._id %>">See Details</a>
+     
+      <hr style="color: rgb(13, 0, 255)"></hr>
+       </div>
+      <% } %>
+</div>
+</div>
+      </div>
+    <%- include("../partials/footer") %>
+  </body>
+</html>

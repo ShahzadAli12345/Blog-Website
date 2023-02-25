@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("../partials/head") %>
+
+     <style>
+      body{
+        
+        background-image: url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw4ODQ0PDQ0IDQ0NDQ0NDQ0NCA8NDQ0NFREWFhURExMYHSggGBolGxMTITEhJSkrLi4uFx8/ODMsNygtLisBCgoKDg0OFRAPFSsdFx0tKy0rKys3KzctLS0rLS0rLSsrKys3LTcrKysrKzctLSsrKzc0Ky0rKys3NzcrKysrK//AABEIASsAqAMBIgACEQEDEQH/xAAZAAEBAQEBAQAAAAAAAAAAAAAAAQIDBAf/xAAjEAEBAQADAAEEAgMAAAAAAAAAAQIDETFBEiFRcYGhYZHh/8QAGQEBAQEBAQEAAAAAAAAAAAAAAAECAwYF/8QAGxEBAQEBAQEBAQAAAAAAAAAAAAERAjEhURL/2gAMAwEAAhEDEQA/APnQD0T4YAABJ2A1nDWc9NNYzekk6UFYAZ1RWbUoVltAEUiosVKACAAFiNILqCzPbpJ0SFuM5x+Wwaxi3QBUAAHO1rdYZrUEqpUagAihABQgqAAis2mqyNSOnF8ujlxe/wAOqzxjr0AaZAAEtVjVRYiAy0JVQWACKAARUWKlABGAEba4/Y7OGfZ+3drljoAaYAATVc11UZrcAECotQWACKAAAAoQVGAEaHoed3z5P0vLHSgNsDO6052pVkQBloABKFBoAQAABEu4DQ463RP6a/l0AVB2x5HF14vF5Z68bBLW3NN1hUYbAAAAQBGgZu2LqmrjpbIxdsozq4tqDOqjUiWiDLT0gOrkOnF8ubpxfKz1OvHRjVa1XNaxIAIoFrP1C40lrPbO/EtWQu2bUGWwBAABNVhbUZrcgAD1/Sn0to7Y4aw3xe/wW9euOub7/bz+0txqS131WbpkNTF+pOwFAAGNtsa9SrGQGVAAGdVdVhK1IAIoAD2sb5JP838OfJzfj/bi3evxznH61vdvv/GQYdHbiv2/Tbhx66ru3zXPqfQBpAABzb145s1YAIoWjGqLIlAZaAAAAAAAAHfjvccG+PXV/aypZsdgHRzAAZ2w1tlmtQAtQTVYBlsAAAAAAAAAAAB3xe4048Wvv1+XZ0lc7MoAqOevUVGGhjVXVZStSACKAAAAAAAAAAAAPRm9x53TivwvNTqfHVNeKztuucYLRi1mtyIAy0AAAAAAAA3cs/S6IuM659DqnUMXXMbuU+lMXWSU6AeiVnacN+E5K3vxjPrOqyDDYAAAAAAAAADqio0wAAAAHRWboWL5WdI6dIvjmLZ0iKAAAAAAAAAA6oqNMAJdAqXTNqJrWACKOkc28+LEqsWNipK5jWssstAAAAAAAAOqWs3TK6ki3SAigAAADePGG8LEqgKyM6y0CyuY3rLDLQAAAAAAAAAAAAAA1hlrBCtANMAACaigrmN2dsMtSgAAAAAAAAAAAC59Rc+g2A0wAAAAFnYAxYjpYxYzY3KgvQCAAAAAAAALEAdBUaYAAAAAcua3z4S3Fk1rfLJ597/Tnndt+7BPWNdZzI7yqyNaxj//2Q==");
+        
+      }
+      </style>
+  </head>
+  <body>
+    <%- include("../partials/navbar") %>
+
+    <div class="container">
+      <h1 style="margin-left: 40%; color: white;">All Blogs</h1>
+<hr style="color: white"></hr>
+</div>
+
+<div class="container" style="background-color: aqua">
+<div class="row">
+      <% for(let blog of blogs){ %>
+   <div class="col-md-6 col-lg-6 col-sm-12">
+        <h3 class="text-center pt-5"><%= blog.title %>
+        </h3>
+        <div class="d-flex justify-content-center">
+        <img class="rounded" style="width: 70%" src="<%= blog.img %> " alt="blog pic" />
+        </div>
+
+        <p class="text-center pt-1 mb-8">
+          <%= blog.text %>
+        </p>
+        <p class="text-center pt-1"><small></small><i><%= blog.auther %></i></small>
+        </p>
+
+      <p class="text-center pt-1"><small></small><i><%= blog.date %></i></small></p>
+       <p> <a href="/blogs/<%= blog._id %>">See Details</a></p>
+         <hr style="color: rgb(13, 0, 255)"></hr>
+      </div>
+      <% } %>
+    </div>
+    </div>
+  </div>
+
+    </div>
+    <%- include("../partials/footer") %>
+    <script src="/js/bootstrap.min.js"></script>
+  </body>
+</html>

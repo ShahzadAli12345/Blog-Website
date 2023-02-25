@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("../partials/head") %>
+    <style>
+      .flex-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 600px;
+        background-image: url("https://i.ibb.co/PTj3zbf/pg5-background-5000x4500.jpg");
+        background-size: cover;
+      
+      }
+
+      .flex-container > div {
+        background-color: #606060;
+        color: aqua;
+        width: 450px;
+        height: 500px;
+        border-radius: 5px;
+        opacity: 0.8;
+       
+      }
+    </style>
+  </head>
+  <body>
+    <%- include("../partials/navbar") %>
+    <div class="flex-container">
+      <div>
+        <div class="container">
+          <h1>Create New Blog Here</h1>
+
+          <form action="/blogs" method="post">
+            <div class="mb-3">
+              <input type="text" placeholder="Title" name="title" style="background-color:lightskyblue" />
+            </div>
+
+            <div class="mb-3">
+              <textarea
+                name="text"
+                cols="39"
+                rows="3"
+                placeholder="Description" style="background-color:lightskyblue"
+              ></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="category"><h5>Select Category:</h3></label>
+              <select id="category" placeholder="category" name="category" style="background-color:lightskyblue">
+                <option value="rice">Rice</option>
+                <option value="spicy">Spicy</option>
+                <option value="fast food">Fast Food</option>
+                <option value="news">News Feed</option>
+                <option value="technology">Tech Related</option>
+                <option value="education">Education Related</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <input type="url" placeholder="Image URL" name="img" style="background-color:lightskyblue" />
+            </div>
+            <div class="mb-3">
+              <input type="text" placeholder="Author name" name="auther" style="background-color:lightskyblue"/>
+            </div>
+
+            <div class="mb-3">
+              <input type="datetime-local" placeholder="Date" name="date" style="background-color:lightskyblue" />
+            </div>
+            <button class="btn"style="background-color:lightskyblue">Upload</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+  <%- include("../partials/footer") %>
+</html>

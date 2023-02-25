@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("../partials/head") %>
+    <style>
+      body {
+        background-color: wheat;
+      }
+    </style>
+  </head>
+  <body>
+    <%- include("../partials/navbar") %>
+
+    <div class="container">
+      <h1 class="text-center"><%= foundBlog.title %></h1>
+
+      <img
+        class="rounded"
+        style="width: 100%"
+        src="<%= foundBlog.img %> "
+        alt=""
+      />
+      <p><%= foundBlog.text %></p>
+      <a class="btn btn-primary" href="/blogs/<%= foundBlog._id %>/edit"
+        >Edit Details</a
+      >
+
+      <form action="/blogs/<%= foundBlog._id %>?_method=delete" method="post">
+        <button>Delete Blog</button>
+      </form>
+      <p><a href="/blogs">Back to Blogs page</a></p>
+
+      <hr />
+    </div>
+    <%- include("../partials/footer") %>
+    <script src="/js/bootstrap.min.js"></script>
+  </body>
+</html>
