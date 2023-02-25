@@ -1,0 +1,17 @@
+/* body {
+  background-color: aqua;
+} */
+.about_text_2 {
+  color: white;
+  border-bottom: 1px solid #49fe5b;
+  text-align: center;
+
+}
+.about_text {
+  width: 100%;
+  float: left;
+  font-size: 40px;
+  font-weight: bold;
+  padding-left: 80px;
+  font-family: "Times New Roman", Times, serif;
+}
